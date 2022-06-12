@@ -1,0 +1,5 @@
+name: Nomad
+version: '${project.version}'
+main: testing.Nomad
+api-version: 1.18
+authors: [ Djtpj ]
