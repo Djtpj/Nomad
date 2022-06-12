@@ -8,6 +8,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
+/**
+ * Listener that fires when a player takes damage while holding the item
+ */
 public abstract class HeldDamageListener implements NomadListener<EntityDamageEvent>, Listener {
 
      final NomadItem item;

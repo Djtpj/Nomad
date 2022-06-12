@@ -6,6 +6,10 @@ import org.bukkit.event.player.PlayerInteractEvent;
 
 import java.util.Arrays;
 
+/**
+ * Super class to all listeners that handle shift clicking
+ * @see ClickListener
+ */
 abstract class ShiftClickListener extends ClickListener {
     public ShiftClickListener(NomadItem item, Action... actions) {
         super(item, actions);

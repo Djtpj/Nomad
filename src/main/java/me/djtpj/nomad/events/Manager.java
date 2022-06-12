@@ -8,6 +8,9 @@ import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
 
+/** Singleton class for event management
+ * This class handles registering each NomadListener
+ */
 public class Manager {
 
     private static Manager instance;
@@ -21,14 +24,11 @@ public class Manager {
 
     private Manager() {
         registered = new ArrayList<>();
-
-        registerAllNomadListeners();
     }
 
-    private void registerAllNomadListeners() {
-
-    }
-
+    /** Method that registers event listener
+     * @param listener the listener to register
+     */
     public void registerEvent(Listener listener) {
         if (!registered.contains(listener.getClass().getSimpleName())) {
             plugin.getServer().getPluginManager().registerEvents(listener, plugin);

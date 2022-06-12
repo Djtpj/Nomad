@@ -8,6 +8,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
+/**
+ * Listener that fires when a player deals damage using this item
+ */
 public abstract class DamageDealtListener implements NomadListener<EntityDamageByEntityEvent>, Listener {
 
     final NomadItem item;

@@ -11,6 +11,9 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/** Super class to all NomadListeners that handle Click events
+ * @see NomadListener
+ */
 public abstract class ClickListener implements NomadListener<PlayerInteractEvent>, Listener {
 
     static ArrayList<ClickListener> listeners = new ArrayList<>();
@@ -19,6 +22,11 @@ public abstract class ClickListener implements NomadListener<PlayerInteractEvent
 
     final Action[] actions;
 
+    /**
+     * @param item the item to compare against
+     * @param actions the Actions that trigger this event. (Cannot be {@link Action#PHYSICAL}).
+     *                This should be defined by the sub listener, not the instantiate.
+     */
     public ClickListener(NomadItem item, Action... actions) {
         this.item = item;
         this.actions = actions;

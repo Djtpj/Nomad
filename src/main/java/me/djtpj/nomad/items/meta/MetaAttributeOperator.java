@@ -2,9 +2,12 @@ package me.djtpj.nomad.items.meta;
 
 import org.bukkit.inventory.meta.ItemMeta;
 
+/**
+ * Used to edit MetaData on NomadItem easier.
+ * @see me.djtpj.nomad.items.NomadItem
+ * @see me.djtpj.nomad.items.NomadItem#changeMeta(MetaAttributeOperator)
+ */
 public interface MetaAttributeOperator {
-
-    // changeMeta(m -> m.setDisplayName("foo"));
 
     void op(ItemMeta meta);
 
