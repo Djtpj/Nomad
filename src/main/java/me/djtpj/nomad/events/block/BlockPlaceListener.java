@@ -7,7 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 
-public abstract class BlockPlaceListener implements NomadListener<BlockPlaceEvent>, Listener {
+public abstract class BlockPlaceListener extends NomadListener<BlockPlaceEvent> implements Listener {
 
     final NomadItem item;
 

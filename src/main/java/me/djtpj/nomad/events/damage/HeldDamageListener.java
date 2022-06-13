@@ -5,13 +5,12 @@ import me.djtpj.nomad.events.NomadListener;
 import me.djtpj.nomad.items.NomadItem;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
 /**
  * Listener that fires when a player takes damage while holding the item
  */
-public abstract class HeldDamageListener implements NomadListener<EntityDamageEvent>, Listener {
+public abstract class HeldDamageListener extends NomadListener<EntityDamageEvent> {
 
      final NomadItem item;
 

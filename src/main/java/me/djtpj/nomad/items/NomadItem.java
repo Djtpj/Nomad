@@ -3,13 +3,17 @@ package me.djtpj.nomad.items;
 import lombok.Getter;
 import lombok.Setter;
 import me.djtpj.nomad.events.NomadListener;
+import me.djtpj.nomad.events.block.BlockBreakListener;
 import me.djtpj.nomad.events.block.BlockPlaceListener;
+import me.djtpj.nomad.events.food.ItemConsumeListener;
 import me.djtpj.nomad.items.meta.MetaAttributeOperator;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -24,7 +28,7 @@ public abstract class NomadItem extends ItemStack implements Listener {
 
     @Getter
     @Setter
-    protected boolean placeable = true, edible = true;
+    private boolean placeable = true, edible = true, breakBlocks = true;
 
     /**
      * @param type Material that the item should be made of
@@ -39,6 +43,20 @@ public abstract class NomadItem extends ItemStack implements Listener {
             @Override
             public void onEvent(BlockPlaceEvent event) {
                 event.setCancelled(!placeable);
+            }
+        });
+
+        addListener(new ItemConsumeListener(this) {
+            @Override
+            public void onEvent(PlayerItemConsumeEvent event) {
+                event.setCancelled(!edible);
+            }
+        });
+
+        addListener(new BlockBreakListener(this) {
+            @Override
+            public void onEvent(BlockBreakEvent event) {
+                event.setCancelled(!breakBlocks);
             }
         });
     }

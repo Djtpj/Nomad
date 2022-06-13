@@ -4,7 +4,6 @@ import me.djtpj.nomad.events.Manager;
 import me.djtpj.nomad.events.NomadListener;
 import me.djtpj.nomad.items.NomadItem;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
@@ -14,7 +13,7 @@ import java.util.Arrays;
 /** Super class to all NomadListeners that handle Click events
  * @see NomadListener
  */
-public abstract class ClickListener implements NomadListener<PlayerInteractEvent>, Listener {
+public abstract class ClickListener extends NomadListener<PlayerInteractEvent> {
 
     static ArrayList<ClickListener> listeners = new ArrayList<>();
 

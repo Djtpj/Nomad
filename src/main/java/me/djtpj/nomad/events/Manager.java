@@ -3,7 +3,6 @@ package me.djtpj.nomad.events;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
@@ -29,10 +28,11 @@ public class Manager {
     /** Method that registers event listener
      * @param listener the listener to register
      */
-    public void registerEvent(Listener listener) {
-        if (!registered.contains(listener.getClass().getSimpleName())) {
+    public void registerEvent(NomadListener listener) {
+        String name = listener.getClass().getSuperclass().getSimpleName();
+        if (!registered.contains(name)) {
             plugin.getServer().getPluginManager().registerEvents(listener, plugin);
-            registered.add(listener.getClass().getSimpleName());
+            registered.add(name);
         }
     }
 
