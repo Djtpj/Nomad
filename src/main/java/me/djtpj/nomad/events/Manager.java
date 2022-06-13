@@ -3,11 +3,13 @@ package me.djtpj.nomad.events;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
 
+/** Singleton class for event management
+ * This class handles registering each NomadListener
+ */
 public class Manager {
 
     private static Manager instance;
@@ -21,18 +23,16 @@ public class Manager {
 
     private Manager() {
         registered = new ArrayList<>();
-
-        registerAllNomadListeners();
     }
 
-    private void registerAllNomadListeners() {
-
-    }
-
-    public void registerEvent(Listener listener) {
-        if (!registered.contains(listener.getClass().getSimpleName())) {
+    /** Method that registers event listener
+     * @param listener the listener to register
+     */
+    public void registerEvent(NomadListener listener) {
+        String name = listener.getClass().getSuperclass().getSimpleName();
+        if (!registered.contains(name)) {
             plugin.getServer().getPluginManager().registerEvents(listener, plugin);
-            registered.add(listener.getClass().getSimpleName());
+            registered.add(name);
         }
     }
 

@@ -1,8 +1,12 @@
-package me.djtpj.nomad.events.click;
+package me.djtpj.nomad.events.click.right;
 
+import me.djtpj.nomad.events.click.ClickListener;
 import me.djtpj.nomad.items.NomadItem;
 import org.bukkit.event.block.Action;
 
+/**
+ * Listener for when a player right clicks while holding the item
+ */
 public abstract class RightClickListener extends ClickListener {
 
     public RightClickListener(NomadItem item) {

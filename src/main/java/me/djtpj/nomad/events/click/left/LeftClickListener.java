@@ -1,8 +1,12 @@
-package me.djtpj.nomad.events.click;
+package me.djtpj.nomad.events.click.left;
 
+import me.djtpj.nomad.events.click.ClickListener;
 import me.djtpj.nomad.items.NomadItem;
 import org.bukkit.event.block.Action;
 
+/**
+ * Listener for when a player left clicks while holding the specified item
+ */
 public abstract class LeftClickListener extends ClickListener {
 
     public LeftClickListener(NomadItem item) {
