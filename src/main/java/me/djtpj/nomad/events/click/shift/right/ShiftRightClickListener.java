@@ -1,5 +1,6 @@
-package me.djtpj.nomad.events.click;
+package me.djtpj.nomad.events.click.shift.right;
 
+import me.djtpj.nomad.events.click.shift.ShiftClickListener;
 import me.djtpj.nomad.items.NomadItem;
 import org.bukkit.event.block.Action;
 

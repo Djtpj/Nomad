@@ -1,4 +1,4 @@
-package me.djtpj.nomad.events.click;
+package me.djtpj.nomad.events.click.shift;
 
 import me.djtpj.nomad.items.NomadItem;
 import org.bukkit.event.block.Action;

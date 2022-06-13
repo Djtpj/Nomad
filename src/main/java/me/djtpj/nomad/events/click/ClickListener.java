@@ -19,7 +19,7 @@ public abstract class ClickListener extends NomadListener<PlayerInteractEvent> {
 
     final NomadItem item;
 
-    final Action[] actions;
+    protected final Action[] actions;
 
     /**
      * @param item the item to compare against
